@@ -13,8 +13,5 @@ RUN ls -al
 # Set environment variables
 ENV NODE_ENV=production
 
-# only copy build folder to container
-COPY --from=0 /app/build ./build
-
 EXPOSE 3000
 CMD ["npm", "run", "start"]
