@@ -4,12 +4,9 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm install && npm run build
 # Set environment variables
 ENV NODE_ENV=production
-
-# Build the application
-RUN npm run build
 
 COPY --from=build /app/build /app/public
 
