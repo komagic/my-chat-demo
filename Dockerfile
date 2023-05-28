@@ -8,7 +8,7 @@ RUN npm install && npm run build
 # Set environment variables
 ENV NODE_ENV=production
 
-COPY --from=build /app/build /app/public
+COPY /build /app/build
 
 EXPOSE 3000
 CMD ["npm", "run", "start"]
